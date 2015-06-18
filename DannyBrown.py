@@ -4,7 +4,8 @@ import smtplib
 def getDanny():
 
     danny = 'Danny Brown'
-    r = praw.Reddit(user_agent = 'alkorin')
+    #Enter your reddit usernamer
+    r = praw.Reddit(user_agent = '')
     submissions = r.get_subreddit('hiphopheads').get_hot(limit = 20)
     list = [str(x) for x in submissions]
     for i in list:
@@ -18,8 +19,10 @@ def sendEmail():
     mail = smtplib.SMTP('smtp.gmail.com',587)
     mail.ehlo()
     mail.starttls()
-    mail.login('alkorin452@gmail.com','Mom Abba Tahlia Yael')
-    mail.sendmail('alkorin452@gmail.com','alkorin452@gmail.com',content)
+    #Email , Password
+    mail.login('','')
+    #From email address, Receiver's email, content
+    mail.sendmail('','',content)
     mail.close()
 
 
